@@ -54,7 +54,7 @@
 	                <artifactId>springloaded</artifactId>
 	                <version>1.2.1.RELEASE</version>
             </dependency> -->
-        </dependencies>
+      <!--  </dependencies>
 			</plugin>
 		</plugins>
 	</build>-->
