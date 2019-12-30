@@ -1,0 +1,10 @@
+node{
+  stage('SCM Checkout')
+  {
+    git 'https://github.com/grjyoshna/sampleTest1'
+  }
+  stage('Compile-Package')
+  {
+    sh 'mvn package'
+  }
+}
