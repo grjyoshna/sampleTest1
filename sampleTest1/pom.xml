@@ -35,25 +35,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				 <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>springloaded</artifactId>
-                <version>1.2.1.RELEASE</version>
-            </dependency>
+					<exclusion>
+						<groupId>org.junit.vintage</groupId>
+						<artifactId>junit-vintage-engine</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					 <dependencies>
+	            <!-- <dependency>
+	                <groupId>org.springframework</groupId>
+	                <artifactId>springloaded</artifactId>
+	                <version>1.2.1.RELEASE</version>
+            </dependency> -->
         </dependencies>
 			</plugin>
 		</plugins>
