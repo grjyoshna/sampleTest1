@@ -5,11 +5,13 @@ pipeline{
     }
     agent any
     stages{
-        stage('Cloning Git'){
-            steps{
-                git 'https://github.com/grjyoshna/sampleTest1.git'
-            }
+            stage('Checkout code') {
+        steps {
+            checkout scm
         }
+    }
+
+       
         stage('Building Image'){
             steps{
                 script{
