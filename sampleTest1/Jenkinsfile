@@ -17,7 +17,7 @@ pipeline{
        
          stage ('Build') {
             steps {
-                sh 'mvn clean --file *.pom'
+                sh 'cd sampleTest1'
             }
             post {
                 success {
