@@ -1,15 +1,27 @@
 pipeline{
-    environment{
-        registry = "grjyoshna/docker_test"
-        registryCredential = "dockerhub"
-    }
+    
     agent any
+    tools{
+        maven ''
+        jdk
+    }
     stages{
+        stage('Initialize'){
+            steps{
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+        
             stage('Checkout code') {
                  steps {
                  checkout scm
                  }
              }
+        
+        
         
        
        
