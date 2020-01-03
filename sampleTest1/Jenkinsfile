@@ -17,13 +17,9 @@ pipeline{
        
          stage ('Build') {
             steps {
-                sh 'cd sampleTest1'
+                sh 'mvn -f sampleTest1/pom.xml clean install'
             }
-            post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
-                }
-            }
+           
         }
       
     }
