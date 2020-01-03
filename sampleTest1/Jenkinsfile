@@ -8,15 +8,17 @@ pipeline{
     stages{
          stage ('Initialize') {
             steps {
-                sh '''
-                    echo "PATH = ${JAVA_HOME}"
-                    echo "M2_HOME = ${M3}"
-                ''' 
+                 
             }
         }
        stage('Build') { 
             steps { 
                echo 'This is a minimal pipeline.' 
+            }
+        }
+         steps {
+            withMaven(maven : 'apache-maven-3.6.3') {
+                bat'mvn clean compile'
             }
         }
       
