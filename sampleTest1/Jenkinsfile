@@ -27,9 +27,7 @@ pipeline{
         
         stage('Docker Build Image'){
             steps{
-               script{
-                docker.build('test', './sampleTest1/')
-                }
+               sh 'docker build -f ../Dockerfile -t myapp_debug'
             }
         
         }
