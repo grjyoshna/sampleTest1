@@ -3,30 +3,22 @@ pipeline{
         registry = "grjyoshna/docker_test"
         registryCredential = "dockerhub"
     }
-    agent any
-   tools {
-        maven 'M3'
-        jdk 'JAVA_HOME'
-    }
-    stages{
-          stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-       
-         stage ('Build') {
-            steps {
-                sh 'mvn -f sampleTest1/pom.xml clean package'
-            }
-           
+    agent none
+        stages {     
+            stage('Maven Install') {
+                                  agent {         
+                                     docker {          
+                                          image 'maven:3.5.0'         
+                                          }       
+                                        }       
+                 steps {
+                   sh 'mvn clean install'
+                     }
+             }
         }
         
        
  
       
-    }
+    
 }
